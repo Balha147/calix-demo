@@ -1,0 +1,60 @@
+/* Start style tooltip */
+.tooltip {
+  @include tooltip-style;
+
+  &.light {
+    background-color: $tooltip-light-color;
+  }
+
+  &.success {
+    background-color: $tooltip-success-color;
+  }
+
+  &.danger {
+    background-color: $tooltip-danger-color;
+  }
+
+  &.warning {
+    background-color: $tooltip-warning-color;
+  }
+
+  &.info {
+    background-color: $tooltip-info-color;
+  }
+}
+
+/* End style tooltip */
+
+/* Start style arrow */
+.tooltip-arrow {
+  @include arrow-style;
+
+  &.top {
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  &.right {
+    top: 50%;
+    left: -5px;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  &.bottom {
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  &.left {
+    top: 50%;
+    right: -5px;
+    transform: translateY(-50%) rotate(45deg);
+  }
+}
+/* End style arrow */
+
+.test {
+  color: royalblue;
+}

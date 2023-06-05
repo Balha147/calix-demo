@@ -1,0 +1,16 @@
+@mixin tooltip-style {
+  position: absolute;
+  padding: 16px;
+  color: $tooltip-color-text;
+  font-size: 14px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@mixin arrow-style {
+  position: absolute;
+  width: $arrow-size;
+  height: $arrow-size;
+  background-color: inherit;
+  transform: rotate(45deg);
+}
