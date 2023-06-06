@@ -1,11 +1,22 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { CalixTooltipEnum } from 'calix-lib';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { CalixInputComponent, CalixShowFormErrorsComponent, CalixTooltipDirective, CalixTooltipEnum } from 'calix-lib';
+import { JsonPipe } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  imports: [
+    RouterOutlet,
+    JsonPipe,
+    CalixInputComponent,
+    ReactiveFormsModule,
+    CalixShowFormErrorsComponent,
+    CalixTooltipDirective,
+  ],
+  standalone: true
 })
 export class AppComponent {
   form: FormGroup = new FormGroup({
@@ -13,15 +24,14 @@ export class AppComponent {
     name: new FormControl('', [Validators.required, Validators.minLength(13)])
   });
 
-  calixValue: string ='calix-';
-
   customErrors = {
     required: () => 'Veuillez remplir ce champ',
     minlength: (param: any) => `Veuillez entrer au moins ${param.requiredLength} caractères`,
   };
 
-  onConcatCalixInputValue(value: string): void {
-    this.calixValue = `calix-${value}`;
+  getOutputOfCalixInput(value: string): void {
+    console.log('value', value);
+
   }
 
   tooltipPosition = CalixTooltipEnum;

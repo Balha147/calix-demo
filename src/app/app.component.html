@@ -9,12 +9,14 @@
           [tooltipPosition]="tooltipPosition.Right"></i>
         </div>
         <calix-input formControlName="name"
-                    [options]="{'placeholder': 'Placeholder' }">
+                    [options]="{'placeholder': 'Placeholder' }"
+                    (valueChange)="getOutputOfCalixInput($event)">
         </calix-input>
         <calix-show-form-errors [control]="form.get('name')"></calix-show-form-errors>
     </div>
 </form>
 
+<pre>{{form?.status | json}}</pre>
 <pre>{{form?.value | json}}</pre>
 <router-outlet></router-outlet>
 
