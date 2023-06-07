@@ -10,7 +10,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrls: ['./app.component.scss'],
   imports: [
     RouterOutlet,
-    JsonPipe,
+    JsonPipe, // juste pour afficher la valeur de notre formulaire `form`
     CalixInputComponent,
     ReactiveFormsModule,
     CalixShowFormErrorsComponent,
@@ -29,9 +29,11 @@ export class AppComponent {
     minlength: (param: any) => `Veuillez entrer au moins ${param.requiredLength} caractères`,
   };
 
+  /**
+   * afficher dans la console la valeur de l'output de `CalixInput`
+   */
   getOutputOfCalixInput(value: string): void {
     console.log('value', value);
-
   }
 
   tooltipPosition = CalixTooltipEnum;
